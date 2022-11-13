@@ -37,3 +37,22 @@ class Flower:
     def draw(self, screen):
         for circle in self.CIRCLES:
             pygame.draw.circle(screen, circle['color'], circle['pos'], circle['radius'])
+
+class ColorPicker:
+    def __init__(self, pos):
+
+        self.RADIUS = 30
+        self.POS = pos
+
+        self.CIRCLES = [
+            (255, 0, 0),
+            (0, 255, 0),
+            (0, 0, 255),
+            (255, 255 ,0),
+            (0, 255, 255),
+            (255, 0, 255)
+        ]
+    
+    def draw(self, screen):
+        for i in range(0, len(self.CIRCLES)):
+            pygame.draw.circle(screen, self.CIRCLES[i], (self.POS[0] + self.RADIUS * 3 * i,self.POS[1]), self.RADIUS)

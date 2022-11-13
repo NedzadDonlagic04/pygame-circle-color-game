@@ -14,8 +14,9 @@ class Game:
         self.CLOCk = MyClock(60)
 
         self.FLOWER = Flower((width / 2, height / 3))
+        self.COLOR_PICKER = ColorPicker((width / 4 - 20, height / 2 + 100))
     
-        self.state = (255, 0, 0)
+        self.state = (255, 255, 255)
 
     def quit(self):
         pygame.quit()
@@ -31,6 +32,8 @@ class Game:
 
             self.FLOWER.update(self.state)
             self.FLOWER.draw(self.SCREEN)
+
+            self.COLOR_PICKER.draw(self.SCREEN)
 
             pygame.display.update()
             self.CLOCk.tick()
