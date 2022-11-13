@@ -30,10 +30,11 @@ class Game:
             
             self.SCREEN.fill(self.SCREEN_BG)
 
+            self.state = self.COLOR_PICKER.update(self.state)
+            self.COLOR_PICKER.draw(self.SCREEN)
+
             self.FLOWER.update(self.state)
             self.FLOWER.draw(self.SCREEN)
-
-            self.COLOR_PICKER.draw(self.SCREEN)
 
             pygame.display.update()
             self.CLOCk.tick()
