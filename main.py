@@ -12,7 +12,11 @@ class Game:
         pygame.display.set_caption(title)
 
         self.CLOCk = MyClock(60)
+
+        self.FLOWER = Flower((width / 2, height / 3))
     
+        self.state = (255, 0, 0)
+
     def quit(self):
         pygame.quit()
         exit()
@@ -24,6 +28,9 @@ class Game:
                     self.quit()
             
             self.SCREEN.fill(self.SCREEN_BG)
+
+            self.FLOWER.update(self.state)
+            self.FLOWER.draw(self.SCREEN)
 
             pygame.display.update()
             self.CLOCk.tick()
